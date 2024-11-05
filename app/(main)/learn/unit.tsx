@@ -1,5 +1,4 @@
 import { lessons, units } from "../../../db/schema";
-import { title } from "process";
 import { UnitBanner } from "./unit-banner";
 import { LessonButton } from "./lesson-button";
 type Props = {

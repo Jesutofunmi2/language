@@ -7,7 +7,6 @@ import {
   courses,
   userProgress,
   units,
-  challenges,
   challengeProgress,
 } from "./schema";
 
@@ -54,10 +53,13 @@ export const getUnits = cache(async () => {
   });
 
   const normalizeData = data.map((unit) => {
-    const lessonsWithcompletedStatus = unit.lessons.map(
-      (lesson: { challenges: any[] }) => {
+    const lessonsWithcompletedStatus = unit.lessons.map( 
+      (lesson) => {
+        if(!lesson.challenges || lesson.challenges.length === 0) {
+          return { ...lesson, completed: false}
+        }
         const allCompletedChallenges = lesson.challenges.every(
-          (challenge: { challengeProgress: any }) => {
+          (challenge) => {
             return (
               challenge.challengeProgress &&
               challenge.challengeProgress.length > 0 &&
