@@ -1,5 +1,5 @@
 {
-  "name": "lingo",
+  "name": "skillup",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,8 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.12",
     "@neondatabase/serverless": "^0.10.1",
-    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -28,7 +29,8 @@
     "react-dom": "^18",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
