@@ -16,6 +16,8 @@ type Props = {
 
 import React, { useState } from "react";
 import { Header } from "./header";
+import { QuestionBubble } from "./question-bubble";
+import { Challenge } from "./challenge";
 
 export const Quiz = ({
   initialLessonId,
@@ -54,7 +56,19 @@ export const Quiz = ({
             <h1 className="text-lg lg:text-3xl text-center lg:text-start font-bold text-neutral-700">
               {title}
             </h1>
-            <div></div>
+            <div>
+              {challenge.type === "ASSIST" && (
+                <QuestionBubble question={challenge?.question} />
+              )}
+              <Challenge
+                options={challenge?.challengeOptions ?? []}
+                onSelect={() => {}}
+                status={"correct"}
+                selectedOption={undefined}
+                disabled={false}
+                type={challenge?.type}
+              />
+            </div>
           </div>
         </div>
       </div>
