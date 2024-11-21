@@ -63,7 +63,7 @@ export const Quiz = ({
               <Challenge
                 options={challenge?.challengeOptions ?? []}
                 onSelect={() => {}}
-                status={"correct"}
+                status={"none"}
                 selectedOption={undefined}
                 disabled={false}
                 type={challenge?.type}
